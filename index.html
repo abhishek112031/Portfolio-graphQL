@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <script>
+        
+//      const peerConnection = new RTCPeerConnection({ iceServers: [] });
+//      peerConnection.createDataChannel('');
+
+//      peerConnection.createOffer()
+//     .then((offer) => peerConnection.setLocalDescription(offer))
+//     .catch((error) => console.log(error));
+
+//     peerConnection.onicecandidate = (event) => {
+//     if (event.candidate) {
+//       console.log(`Client's IP address is ${event.candidate.address}`);
+//      }
+//    };
+
+   fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.ip);
+    })
+    .catch(error => {
+        console.log('Error:', error);
+    });
+    </script>
+</body>
+</html>
